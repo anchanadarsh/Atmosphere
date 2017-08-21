@@ -1,0 +1,125 @@
+/* All custom codes with comment */
+
+$width_10:10px;
+$width_5:5px;
+$deg359:359;
+@for $i from 0 through 89 {
+    @each $degree in $i {
+        $adddeg: $deg359 + $i;
+        .square_#{$degree} {
+            transform: rotate(#{$degree}deg);
+            -webkit-animation: rotation_#{$degree} 60s infinite linear;
+        }
+        @-webkit-keyframes rotation_#{$degree} {
+            from {
+                -webkit-transform: rotate(#{$degree}deg);
+            }
+            to {
+                -webkit-transform: rotate(#{$adddeg}deg);
+            }
+        }
+    }
+}
+
+body {
+    background: white;
+}
+
+.atmosphere-outer {
+    width: 700px;
+    height: 700px;
+    margin: auto;
+    background: white;
+    position: relative;
+    cursor: pointer;
+}
+
+.particle-set-square {
+    width: 500px;
+    height: 500px;
+    background: none;
+    top: 100px;
+    position: absolute;
+    left: 100px;
+}
+
+.c-particle:hover {
+    width: 30px;
+    height: 30px;
+}
+
+.particle {
+    position: absolute;
+    width: $width_10;
+    height: $width_10;
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+
+.red-particle {
+    @extend .particle;
+    background: red;
+}
+
+.green-particle {
+    @extend .particle;
+    background: green;
+}
+
+.yellow-particle {
+    @extend .particle;
+    background: yellow;
+}
+
+.blue-particle {
+    @extend .particle;
+    background: blue;
+}
+
+.purple-particle {
+    @extend .particle;
+    background: purple;
+}
+
+.tl {
+    top: -$width_5;
+    left: -$width_5;
+    &:hover {
+        top: -$width_5 -$width_5 -$width_5;
+        left: -$width_5 -$width_5 -$width_5;
+    }
+}
+
+.tr {
+    top: -$width_5;
+    right: -$width_5;
+    &:hover {
+        top: -$width_5 -$width_5 -$width_5;
+        right: -$width_5 -$width_5 -$width_5;
+    }
+}
+
+.bl {
+    bottom: -$width_5;
+    left: -$width_5;
+    &:hover {
+        bottom: -$width_5 -$width_5 -$width_5;
+        left: -$width_5 -$width_5 -$width_5;
+    }
+}
+
+.br {
+    bottom: -$width_5;
+    right: -$width_5;
+    &:hover {
+        bottom: -$width_5 -$width_5 -$width_5;
+        right: -$width_5 -$width_5 -$width_5;
+    }
+}
+
+.make_particle_big {
+    top: calc(50% - 200px);
+    left: calc(50% - 200px);
+    width: 400px;
+    height: 400px;
+}
