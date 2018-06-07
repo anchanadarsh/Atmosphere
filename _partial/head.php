@@ -22,4 +22,4 @@ Downloaded from get bootstrap
 <link href="css/freaking-custom.css" rel="stylesheet">
 
 <!--Your custom css code-->
-<link href="css/style.css" rel="stylesheet">
+<!--<link href="css/style.css" rel="stylesheet">-->
